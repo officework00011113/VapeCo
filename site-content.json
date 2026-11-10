@@ -1,0 +1,9 @@
+{
+  "announcement": {
+    "enabled": false,
+    "text": ""
+  },
+  "overviews": {
+    "starter-kits": "A starter kit groups a device with a selection of related components. The exact contents and compatibility depend on the model. Consult the manufacturer's documentation for specifications and instructions."
+  }
+}

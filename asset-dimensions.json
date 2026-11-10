@@ -1,0 +1,58 @@
+{
+  "assets/logo.png": {
+    "width": 2048,
+    "height": 682
+  },
+  "assets/reference-images/004_7_8.webp": {
+    "width": 3602,
+    "height": 1114
+  },
+  "assets/reference-images/008_5_8_1.webp": {
+    "width": 3602,
+    "height": 1114
+  },
+  "assets/reference-images/029_SM2.webp": {
+    "width": 450,
+    "height": 270
+  },
+  "assets/reference-images/030_SM1.webp": {
+    "width": 450,
+    "height": 270
+  },
+  "assets/reference-images/031_SM3.webp": {
+    "width": 450,
+    "height": 270
+  },
+  "assets/reference-images/035_black-leather-oxva-nexlim-2-dual-mesh-2026_3.webp": {
+    "width": 600,
+    "height": 600
+  },
+  "assets/reference-images/037_saltnic_drytobacco_25mg.png": {
+    "width": 700,
+    "height": 700
+  },
+  "assets/reference-images/042_voopoo-logo.png": {
+    "width": 230,
+    "height": 85
+  },
+  "assets/reference-images/043_OXVA_Banner_Square_Resized.png": {
+    "width": 497,
+    "height": 84
+  },
+  "assets/reference-images/050_SMOK.png": {
+    "width": 900,
+    "height": 500
+  },
+  "assets/reference-images/051_juul.png": {
+    "width": 230,
+    "height": 85
+  },
+  "assets/reference-images/058_infinity.png": {
+    "width": 230,
+    "height": 85
+  },
+  "assets/reference-images/059_Uwell.webp": {
+    "width": 900,
+    "height": 900
+  }
+}

@@ -1,0 +1,11 @@
+VAPECO – GITHUB PAGES READY
+
+1. Create/open your GitHub repository.
+2. Upload all extracted files to the repository ROOT (index.html must be visible at the top level).
+3. Repository Settings > Pages > Deploy from a branch > main > /(root) > Save.
+4. Open deployed HTTPS link. The hero auto-slides; checkout sample fields are editable.
+5. For real website enquiry email, visit Contact Us and send a fictional test.
+6. Check officework00011113@gmail.com and CONFIRM the FormSubmit.co first-use activation link. Then send a second test to verify inbox receipt.
+7. Local file:/// preview can only OPEN an email draft; click Send in a configured mail application.
+
+See GITHUB-PAGES-SETUP.md for details.
