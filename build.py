@@ -24,9 +24,9 @@ home_images={
 def home_image(name):
  filename,alt,css_class=home_images[name]
  return image('assets/reference-images/'+filename,alt,css_class)
-pages=['Home','About Us','Contact Us','Complaints','Privacy Policy','Return Policy','Age Verification','Price Beating','Blog','Blog Article','Locations','Search','Brands','Categories']
+pages=['Home','About Us','Contact Us','Complaints','Privacy Policy','Return Policy','Age Verification','Price Beating','Blog','Blog Article','Locations','Search','Categories']
 cats=['Vaporizers','Starter Kits','Pod Devices','Digital Mods','Full Kits','Disposables','E-Liquids','Nicotine Salts','Menthol Flavors','Tobacco Flavors','Fruit Flavors','Dessert Flavors','Coils and Pods','Accessories','Chargers','Batteries','Tanks','New In','Sale']
-brands=['Vgod','Tokyo','Blvk','Pop','Prohibition','Nasty','Ripe Vapes','Naked']
+brands=[]
 cities=[]
 def slug(x):return re.sub('[^a-z0-9]+','-',x.lower()).strip('-')
 def url(x):return 'index.html' if x=='Home' else slug(x)+'.html'
@@ -35,7 +35,7 @@ def ph(x):return f'<div class="ph"><small>IMAGE PLACEHOLDER</small><strong>{x}</
 def tiles(xs,homepage=False):return '<div class="tiles">'+''.join(f'<a class="tile" href="{url(x)}">{home_image(x) if homepage and x in home_images else ph(x)}<h3>{x}</h3><span>View information →</span></a>' for x in xs)+'</div>'
 nav=['Home','Brands','Vaporizers','E-Liquids','New In','Coils and Pods','Accessories','Sale','Disposables','Locations']
 def navigation():
- groups=[('Brands',['Brands']+brands),('Categories',['Categories']+cats),('Information',['About Us','Contact Us','Complaints','Blog','Privacy Policy','Return Policy','Age Verification'])]
+ groups=[('Categories',['Categories']+cats),('Information',['About Us','Contact Us','Complaints','Blog','Privacy Policy','Return Policy','Age Verification'])]
  out='<a href="index.html">Home</a>'
  for label,items in groups:
   out+=f'<div class="nav-group"><a class="nav-main" href="{url("About Us") if label=="Information" else url(label)}">{label}</a><button class="nav-expand" type="button" aria-label="Expand {label}" aria-expanded="false" aria-haspopup="true">⌄</button><div class="submenu">'+''.join(a(x) for x in items)+'</div></div>'
@@ -53,7 +53,7 @@ def write(x,content):
  target.write_text(shell(x,content),encoding='utf8')
 hero='<section class="hero"><button id="prev" aria-label="Previous slide">‹</button><div class="slide"><div><small>VAPE CO / PROMOTIONAL PLACEHOLDER</small><h1>Discover Vape Co</h1><p>Approved campaign copy and banner artwork will be added here.</p><a class="btn" href="about-us.html">About us</a></div>'+image('assets/reference-images/004_7_8.webp','Uwell Caliburn product range banner','hero-art','eager')+'</div><div class="slide" hidden><div><small>EXPLORE INFORMATION</small><h1>Brands & Categories</h1><p>Second editable campaign slide.</p><a class="btn" href="brands.html">Explore brands</a></div>'+image('assets/reference-images/008_5_8_1.webp','OXVA NeXLIM device range banner','hero-art')+'</div><button id="next" aria-label="Next slide">›</button><div class="dots" aria-label="Select slide"><button data-slide="0" aria-label="Slide one">●</button><button data-slide="1" aria-label="Slide two">○</button></div></section>'
 benefits='<div class="wrap benefits">'+''.join(f'<div><b>{icon}</b><strong>{text}</strong><small>Editable supporting text</small></div>' for icon,text in [('◇','Delivery information'),('✓','Brand information'),('▦','Category directory'),('☎','Customer support'),('⌖','Store directory')])+'</div>'
-write('Home',hero+benefits+'<div class="wrap">'+ '<section><h2>Explore categories</h2>'+tiles(cats[:4],homepage=True)+'</section><section><h2>Promotional features</h2><div class="promos">'+ph('Promo banner A')+ph('Promo banner B')+'</div></section><section><h2>Featured information</h2><div class="tabs" role="tablist" aria-label="Featured categories"><button role="tab" aria-selected="true" data-tab="0" class="selected">Featured</button><button role="tab" aria-selected="false" data-tab="1">Latest</button><button role="tab" aria-selected="false" data-tab="2">Popular</button></div><div id="tab-content" role="tabpanel">'+tiles(cats[4:8],homepage=True)+'</div></section><section><h2>Brands</h2>'+tiles(brands[:8],homepage=True)+'</section><section><h2>About Vape Co</h2><p>[Approved company background, editorial text and SEO copy placeholder.]</p></section></div>')
+write('Home',hero+benefits+'<div class="wrap">'+ '<section><h2>Explore categories</h2>'+tiles(cats[:4],homepage=True)+'</section><section><h2>Promotional features</h2><div class="promos">'+ph('Promo banner A')+ph('Promo banner B')+'</div></section><section><h2>Featured information</h2><div class="tabs" role="tablist" aria-label="Featured categories"><button role="tab" aria-selected="true" data-tab="0" class="selected">Featured</button><button role="tab" aria-selected="false" data-tab="1">Latest</button><button role="tab" aria-selected="false" data-tab="2">Popular</button></div><div id="tab-content" role="tabpanel">'+tiles(cats[4:8],homepage=True)+'</div></section><section><h2>About Vape Co</h2><p>[Approved company background, editorial text and SEO copy placeholder.]</p></section></div>')
 write('About Us','<div class="wrap page"><h1>About Us</h1><div class="two"><div><h2>Our story</h2><p>[Verified company history pending.]</p><h2>Our approach</h2><p>[Approved business information pending.]</p></div>'+ph('Company image')+'</div></div>')
 form='<form class="contact" novalidate><label>Name *<input name="name" required></label><label>Email *<input name="email" type="email" required></label><label>Phone<input name="phone" type="tel"></label><label>Message *<textarea name="message" rows="5" required></textarea></label><button>Validate message</button><p class="status" role="status"></p><small>Demo form only. No backend is connected and no message is sent.</small></form>'
 write('Contact Us','<div class="wrap page"><h1>Contact Us</h1><div class="two"><div><h2>Contact information</h2><p>[Phone, email, address, opening hours pending.]</p></div>'+form+'</div></div>')
@@ -64,7 +64,6 @@ write('Blog','<div class="wrap page"><h1>Blog</h1><div class="blog-grid"><articl
 write('Blog Article','<div class="wrap page policy"><a href="blog.html">← Blog</a><h1>Article title placeholder</h1><p>[Date] · [Author]</p>'+ph('Article hero image')+'<h2>Introduction</h2><p>[Approved article body pending.]</p></div>')
 write('Locations','<div class="wrap page"><h1>Store Information</h1><p>Verified store addresses and opening hours are not yet published. Please use the contact page for general enquiries.</p></div>')
 for x in cities:write(x,'<div class="wrap page"><a href="locations.html">← Locations</a><h1>'+x+'</h1>'+ph('Store photograph or map')+'<p>[Confirm location, address, phone and opening hours.]</p></div>')
-write('Brands','<div class="wrap page"><h1>Brands</h1><p>Brand directory placeholders — associations with Vape Co not confirmed.</p>'+tiles(brands)+'</div>')
 write('Categories','<div class="wrap page"><h1>Categories</h1>'+tiles(cats)+'</div>')
 for x in brands+cats:
  overview=content_config.get('overviews',{}).get(slug(x),'[Approved informational description pending.]')
