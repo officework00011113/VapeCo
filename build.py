@@ -20,19 +20,13 @@ home_images={
  'Disposables':('031_SM3.webp','Disposable vape devices','tile-art'),
  'E-Liquids':('030_SM1.webp','E-liquid bottles','tile-art'),
  'Nicotine Salts':('037_saltnic_drytobacco_25mg.png','Dry Tobacco nicotine salt bottle','tile-art'),
- 'Uwell':('059_Uwell.webp','Uwell brand logo','brand-art'),
- 'Oxva':('043_OXVA_Banner_Square_Resized.png','OXVA brand artwork','brand-art'),
- 'Infinity':('058_infinity.png','Infinity brand logo','brand-art'),
- 'Smok':('050_SMOK.png','SMOK brand logo','brand-art'),
- 'Voopoo':('042_voopoo-logo.png','Voopoo brand logo','brand-art'),
- 'Juul':('051_juul.png','JUUL brand logo','brand-art')
 }
 def home_image(name):
  filename,alt,css_class=home_images[name]
  return image('assets/reference-images/'+filename,alt,css_class)
 pages=['Home','About Us','Contact Us','Complaints','Privacy Policy','Return Policy','Age Verification','Price Beating','Blog','Blog Article','Locations','Search','Brands','Categories']
 cats=['Vaporizers','Starter Kits','Pod Devices','Digital Mods','Full Kits','Disposables','E-Liquids','Nicotine Salts','Menthol Flavors','Tobacco Flavors','Fruit Flavors','Dessert Flavors','Coils and Pods','Accessories','Chargers','Batteries','Tanks','New In','Sale']
-brands=['Vaporesso','Uwell','Oxva','Infinity','Smok','Innokin','Voopoo','Juul','Iqos','Geek Vape','Vgod','Tokyo','Blvk','Pop','Prohibition','Nasty','Ripe Vapes','Naked']
+brands=['Vgod','Tokyo','Blvk','Pop','Prohibition','Nasty','Ripe Vapes','Naked']
 cities=[]
 def slug(x):return re.sub('[^a-z0-9]+','-',x.lower()).strip('-')
 def url(x):return 'index.html' if x=='Home' else slug(x)+'.html'
